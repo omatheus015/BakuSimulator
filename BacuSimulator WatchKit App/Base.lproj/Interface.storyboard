@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I7N-0h-few">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+    </dependencies>
+    <scenes>
+        <!--cometerCrimeController-->
+        <scene sceneID="Ax2-El-Rxj">
+            <objects>
+                <controller identifier="cometerCrimeController" id="I7N-0h-few" customClass="CometerCrimeController" customModule="BacuSimulator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="gvp-b1-2LT">
+                            <items>
+                                <imageView alignment="left" image="bruna" contentMode="scaleAspectFit" id="gNV-ck-eVj">
+                                    <color key="tintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Cometer crime" id="BS2-U0-4Qq">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="handleCometerCrime" destination="I7N-0h-few" id="9r2-Z8-yqj"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-37" y="345"/>
+        </scene>
+        <!--fugindoPolicia-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="fugindoPolicia" id="AgC-eL-Hgc" customClass="FugindoPoliciaController" customModule="BacuSimulator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Bacu Simulator" id="NPK-3r-DED">
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" verticalAlignment="center" text="Agora tente fugir da polícia!" textAlignment="center" numberOfLines="0" id="ygb-OI-g56">
+                            <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--fimCrimeController-->
+        <scene sceneID="wJE-V5-Yz6">
+            <objects>
+                <controller identifier="fimCrimeController" id="eay-Dv-ZDP" customClass="FimCrimeController" customModule="BacuSimulator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="right" verticalAlignment="bottom" title="Voltar pro beco" id="zPq-ZZ-tBA">
+                            <color key="backgroundColor" red="0.57893627882003784" green="0.08988470584154129" blue="0.31699725985527039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="handleBecoButton" destination="eay-Dv-ZDP" id="6fk-SF-aca"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" text="Bacu Simulator" id="0VC-Yw-TjO">
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" verticalAlignment="center" text="Você levantou a mão de um jeito não suspeito!" textAlignment="center" numberOfLines="0" id="yoZ-V8-miD">
+                            <color key="textColor" red="0.9988437294960022" green="0.18447217345237732" blue="0.57182186841964722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="becoButton" destination="zPq-ZZ-tBA" id="pXy-oK-pFj"/>
+                        <outlet property="fimCrimeLabel" destination="yoZ-V8-miD" id="AsW-AW-np8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="480" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="BacuSimulator_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
